@@ -13,14 +13,14 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const app = express();
 const { PORT = 3000 } = process.env;
 
-const whiteList = [
+const allowedCors = [
   'https://kiprin.students.nomoredomains.icu/',
   'https://api.kiprin.students.nomoredomains.icu/',
-  'http://localhost:3000'
+  'http://localhost:3000',
 ];
 
 app.use(cors({
-  origin: whiteList
+  origin: allowedCors,
 }));
 
 mongoose.connect('mongodb://localhost:27017/mestodb', {
