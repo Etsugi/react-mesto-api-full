@@ -11,17 +11,17 @@ const { createUser } = require('./controllers/users');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const app = express();
-const { PORT = 3000 } = process.env;
 
 const allowedCors = [
   'https://kiprin.students.nomoredomains.icu/',
   'https://api.kiprin.students.nomoredomains.icu/',
   'http://localhost:3000',
 ];
-
 app.use(cors({
   origin: allowedCors,
 }));
+
+const { PORT = 3000 } = process.env;
 
 mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
