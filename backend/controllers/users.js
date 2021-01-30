@@ -67,8 +67,9 @@ const createUser = (req, res, next) => {
 const getUserInfo = (req, res, next) => {
   const id = req.user._id;
   User.findById(id)
-    .then((user) => {
-      res.send(user);
+    .then(user => res.send(user))
+    .catch((err) => {
+      res.send(err);
     })
     .catch(next);
 };
