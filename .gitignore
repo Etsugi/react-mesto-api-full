@@ -18,6 +18,7 @@ logs
 
 # Dependency directory
 node_modules
+build
 
 # testing
 /coverage
