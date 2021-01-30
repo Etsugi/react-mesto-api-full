@@ -16,12 +16,18 @@ const { PORT = 3000 } = process.env;
 const whiteList = [
   'https://kiprin.students.nomoredomains.icu/',
   'https://api.kiprin.students.nomoredomains.icu/',
-  'http://localhost:3000',
+  'http://localhost:3000'
 ];
 
-app.use(cors({
-  origin: whiteList
-}));
+app.use(function(req, res, next) {
+  const { origin } = req.headers;
+
+  if (whiteList.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+  }
+
+  next();
+});
 
 mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,

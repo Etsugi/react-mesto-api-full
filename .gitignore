@@ -12,9 +12,12 @@ logs
 .env*
 
 # dependencies
-*/node_modules
+/node_modules
 /.pnp
 .pnp.js
+
+# Dependency directory
+node_modules
 
 # testing
 /coverage
