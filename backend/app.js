@@ -19,15 +19,9 @@ const whiteList = [
   'http://localhost:3000'
 ];
 
-app.use(function(req, res, next) {
-  const { origin } = req.headers;
-
-  if (whiteList.includes(origin)) {
-    res.header('Access-Control-Allow-Origin', origin);
-  }
-
-  next();
-});
+app.use(cors({
+  origin: whiteList
+}));
 
 mongoose.connect('mongodb://localhost:27017/mestodb', {
   useNewUrlParser: true,
