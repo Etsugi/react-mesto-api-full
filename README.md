@@ -5,6 +5,6 @@
   
 [Ссылка на ЯндексОблако](https://kiprin.students.nomoredomains.icu)
 
-Публичный id: 130.193.50.220
+Публичный id: 84.201.174.166
 
 Доменное имя сервера: https://api.kiprin.students.nomoredomains.icu
